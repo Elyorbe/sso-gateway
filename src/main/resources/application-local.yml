@@ -1,0 +1,39 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: dev
+      password: dev
+      database: ssoGateway
+      port: 27017
+      host: localhost
+
+    redis:
+      host: localhost
+      port: 6379
+      password: auth-gateway
+
+  banner:
+    location: classpath:banner/local.txt
+
+
+app:
+  cors:
+    allowedOrigins:
+      - https://elyor.me
+    allowedMethods: GET, POST, DELETE, PUT, OPTIONS
+
+  security:
+    jwt:
+      secret: this-is-a-jwt-security-here-very-very-long-jwt-secret-to-be-used
